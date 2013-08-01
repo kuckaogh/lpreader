@@ -67,7 +67,7 @@ var : ID ;
 integer : INT ;
 float : INT '.' INT ;
 number : integer | float ;
-complex : INT?  ( ID | '.' | '-' | '\"' | '\\' )+ ;
+//complex : INT?  ( ID | '.' | '-' | '\"'  )+ ;
 sign : Plus | Minus ;
 
 

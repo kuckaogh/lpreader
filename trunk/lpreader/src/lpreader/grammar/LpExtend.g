@@ -65,10 +65,10 @@ var : ID ;
 
 
 integer : INT ;
-float : INT '.' INT ;
-number : integer | float ;
+real : INT '.' INT ;
+number : integer | real ;
 //complex : INT?  ( ID | '.' | '-' | '\"'  )+ ;
-sign : Plus | Minus ;
+sign : '+' | '-' ;
 
 
 
@@ -84,8 +84,7 @@ SubjectTo : 'Subject To' ;
 Bounds : 'Bounds' ;
 General : 'General' | 'Generals' ;
 
-Plus : '+' ;
-Minus : '-' ;
+
 Inf : 'inf' ;
 Begin  : 'Begin' | 'begin' | 'BEGIN'  ;
 End    : 'End' | 'end' | 'END'    ;

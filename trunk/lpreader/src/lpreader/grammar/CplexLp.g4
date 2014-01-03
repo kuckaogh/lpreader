@@ -1,6 +1,7 @@
 
-grammar CplexLP;
+grammar CplexLp;
 
+prog: expr;
 
 expr:   
        ('-'|'+') expr
@@ -41,11 +42,10 @@ ID  :   '.' (LETTER|'_'|'.') (LETTER|DIGIT|'_'|'.')*
 
 fragment LETTER  : [a-zA-Z] ;
 
-USER_OP :   '%' .*? '%' ;
 
-COMMENT :   '#' .*? '\r'? '\n' -> type(NL) ;
+WS  :  [ \t\r\n]+ -> skip
+    ;
 
-// Match both UNIX and Windows newlines
-NL      :   '\r'? '\n' ;
-
-WS      :   [ \t]+ -> skip ;
+LINE_COMMENT
+    :   '\\' ~[\r\n]* -> skip
+    ;

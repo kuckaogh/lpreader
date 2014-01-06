@@ -1,50 +1,82 @@
 
 grammar CplexLp;
+@header {
+//  package lpreader.grammar;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+}
 
-prog: expr;
+prog: maximize subjectTo bounds End;
 
-expr:   
-       ('-'|'+') expr
+maximize : Maximize expr ;
+subjectTo: SubjectTo ( ID ':' constraint)+ ;
+bounds   : Bounds expr_bound+;
+
+
+expr_bound : ('-'? number '<=')? ID '<=' '-'? number | ('-'? number '<=') ID
+           ;
+
+constraint : expr ('<='|'>='|'=') expr ;
+
+expr: ('-'|'+') expr
     |   expr ('*'|'/') expr
     |   expr ('+'|'-') expr
-    |   expr ('&'|'&&') expr
     |   '(' expr ')'
     |   ID
-    |   STRING
     |   INT
     |   FLOAT
+    |   Inf
+    | term
+    ;
+
+term : number ID ;
+
+number :  
+        ( INT | FLOAT | Inf )
+       ;
+
+INT :   Digit+  ;
+
+FLOAT:  Digit+ '.' Digit* ExponentPart?
+    |   Digit+ ExponentPart
+    |   '.' Digit+
     ;
 
 
-INT :   DIGIT+ [Ll]? ;
-
-FLOAT:  DIGIT+ '.' DIGIT* [Ll]?
-    |   DIGIT+ [Ll]?
-    |   '.' DIGIT+ [Ll]?
-    ;
 fragment
-DIGIT:  '0'..'9' ; 
-
-COMPLEX
-    :   INT 'i'
-    |   FLOAT 'i'
+ExponentPart
+    :   'E' [+-]? Digit+
     ;
+
+fragment
+Digit:  '0'..'9' ; 
 
 STRING
     :   '"' ( ~[\\"] )*? '"'
     |   '\'' ( ~[\\'] )*? '\''
     ;
 
+// Keywords
+Maximize : 'Maximize' ;             
+SubjectTo : 'Subject To' ;
+Bounds : 'Bounds' ;
+End : 'End' ;
 
-ID  :   '.' (LETTER|'_'|'.') (LETTER|DIGIT|'_'|'.')*
-    |   LETTER (LETTER|DIGIT|'_'|'.')*
+Inf : 'inf' ;
+
+ID  :   Letter (Letter|Digit|'_'|'.')*
     ;
 
-fragment LETTER  : [a-zA-Z] ;
+fragment Letter  : [a-zA-Z] ;
 
 
 WS  :  [ \t\r\n]+ -> skip
     ;
+
 
 LINE_COMMENT
     :   '\\' ~[\r\n]* -> skip

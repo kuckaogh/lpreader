@@ -1,7 +1,7 @@
 
 grammar CplexLp;
 @header {
-//  package lpreader.grammar;
+//package lpreader.grammar;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -13,14 +13,14 @@ import java.util.Set;
 prog: maximize subjectTo bounds End;
 
 maximize : Maximize expr ;
-subjectTo: SubjectTo ( ID ':' constraint)+ ;
+subjectTo: SubjectTo ( ID ':' expr_constraint)+ ;
 bounds   : Bounds expr_bound+;
 
 
 expr_bound : ('-'? number '<=')? ID '<=' '-'? number | ('-'? number '<=') ID
            ;
 
-constraint : expr ('<='|'>='|'=') expr ;
+expr_constraint : expr ('<='|'>='|'=') expr ;
 
 expr: ('-'|'+') expr
     |   expr ('*'|'/') expr

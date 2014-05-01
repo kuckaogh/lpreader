@@ -34,6 +34,8 @@ public class GWreader {
 			//tree.save(parser, "/tmp/R.ps"); // Generate postscript
 			System.out.println(tree.toStringTree(parser));
 			
+			System.out.println(parser.numberOfPoints);
+			System.out.println(parser.ratio);
 			
 
 		}

@@ -5,18 +5,14 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import lpreader.grammar.LpExtendLexer;
-import lpreader.grammar.LpExtendParser;
 
 import org.antlr.runtime.ANTLRFileStream;
 import org.antlr.runtime.CharStream;
 import org.antlr.runtime.CommonTokenStream;
 import org.antlr.runtime.RecognitionException;
 import org.antlr.runtime.TokenStream;
-import org.testng.Assert;
-import org.testng.annotations.Test;
-
-
+//import org.testng.Assert;
+//import org.testng.annotations.Test;
 
 
 public class LpReader {
@@ -57,21 +53,11 @@ public class LpReader {
 	         
 	        }
 		    
-		LpExtendLexer lexer = new LpExtendLexer(stream);
-		TokenStream tokenStream = new CommonTokenStream(lexer);		
+		//LpExtendLexer lexer = new LpExtendLexer(stream);
+		//TokenStream tokenStream = new CommonTokenStream(lexer);		
 
-		LpExtendParser parser = new LpExtendParser(tokenStream);
-		
-		
-//		
-//		parser.configKeyMap = ConfigReader.configKeyMap;	
-//		parser.configFile();
-//		
-//		
-//		configMap = parser.configMap;
-		
-		//return configMap;
-		
+		//LpExtendParser parser = new LpExtendParser(tokenStream);
+				
 
 	}	
 

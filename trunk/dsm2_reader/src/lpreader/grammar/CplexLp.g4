@@ -1,7 +1,7 @@
 
 grammar CplexLp;
 @header {
-//package lpreader.grammar;
+package lpreader.grammar;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.LinkedHashMap;

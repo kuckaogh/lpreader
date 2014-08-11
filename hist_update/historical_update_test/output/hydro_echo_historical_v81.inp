@@ -51,7 +51,7 @@ HISTSTAGEVERSION                    DWR-DMS-201203
 HYDROOUTDSSFILE                     ./output/historical_v81.dss    
 HYDROOUTFILE                        ./output/historical_v81.hof    
 HYDRORSTFILE                        ./output/historical_v81.hrf    
-HYDROTIDEFILE                       ./output/historical_v81.h5    
+HYDROTIDEFILE                       z:/historical_v81.h5    
 OUTPUTFILE                          historical_v81.dss    
 PTMOUTFILE                          ./output/historical_v81.pof    
 PTMOUTPUTFILE                       ./output/ptmout.dss    
@@ -105,7 +105,7 @@ END
 IO_FILE
 MODEL  TYPE  IO  INTERVAL  FILE  
 hydro       echo        out         none          ./output/hydro_echo_historical_v81.inp    
-hydro       hdf5        out         30min         ./output/historical_v81.h5    
+hydro       hdf5        out         30min         z:/historical_v81.h5    
 hydro       output      out         none          ./output/historical_v81.hof    
 hydro       restart     out         1mon          ./output/historical_v81.hrf    
 END
@@ -11587,7 +11587,7 @@ END
 
 GATE_WEIR_DEVICE
 GATE_NAME  DEVICE  NDUPLICATE  WIDTH  ELEV  HEIGHT  CF_FROM_NODE  CF_TO_NODE  DEFAULT_OP  
-clifton_court       reservoir_gates     5           20.000    -7.748    9999.000  1.0000        1.0000        unidir_from_node         
+clifton_court       reservoir_gates     5           20.000    -7.748    9999.000  1.0000        1.0000        unidir_from_node      
 delta_cross_channel    cross_channel_gates    2           60.000    -11.218   9999.000  2.0000        2.0000        gate_open             
 grant_line_barrier    barrier             1           180.000   3.313     9999.000  0.8000        0.8000        gate_open             
 middle_r_barrier    barrier             1           140.000   3.267     9999.000  0.7000        0.7000        gate_open             

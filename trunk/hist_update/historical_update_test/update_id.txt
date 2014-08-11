@@ -1,3 +1,12 @@
+DSS files
+
+hist_19902012.dss
+events.dss
+dicu_201203.dss
+gates-v8-06212012.dss
+dicuwq_3vals_extended.dss 
+
+
 Historical Updates Hydro ID
 ===========================
 BOUNDARYFLOW
@@ -61,12 +70,12 @@ Historical Updates Qual ID
 
 NODE_CONCENTRATION
 EC for DICU*  dicuwq_3vals_extended.dss
-jones_out           events.dss                      /HIST+CHAN/JONES/EC//1DAY/DWR-DMS/                    
-jones_pumpout       events.dss                      /HIST+CHAN/JONES/EC//1DAY/DWR-DMS/                    
-mtz                 hist_19902012.dss               /FILL+CHAN/RSAC054/EC//1HOUR/DWR-DMS-201203_CORRECTED/    
-sac                 timeseries/hist_19902012.dss    /FILL+CHAN/RSAC139/EC//1DAY/DWR-DMS-201203/           
-vernalis            timeseries/hist_19902012.dss    /FILL+CHAN/RSAN112/EC//1DAY/DWR-DMS-201203/           
-yolo                timeseries/hist_19902012.dss    /FILL+CHAN/RSAC139/EC//1DAY/DWR-DMS-201203/           
+jones_out           events.dss           /HIST+CHAN/JONES/EC//1DAY/DWR-DMS/                    
+jones_pumpout       events.dss           /HIST+CHAN/JONES/EC//1DAY/DWR-DMS/                    
+mtz                 hist_19902012.dss    /FILL+CHAN/RSAC054/EC//1HOUR/DWR-DMS-201203_CORRECTED/    
+sac                 hist_19902012.dss    /FILL+CHAN/RSAC139/EC//1DAY/DWR-DMS-201203/           
+vernalis            hist_19902012.dss    /FILL+CHAN/RSAN112/EC//1DAY/DWR-DMS-201203/           
+yolo                hist_19902012.dss    /FILL+CHAN/RSAC139/EC//1DAY/DWR-DMS-201203/           
 
 RESERVOIR_CONCENTRATION
 NAME  RES_NAME  VARIABLE  FILLIN  FILE  PATH  

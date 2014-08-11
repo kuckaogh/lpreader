@@ -1,5 +1,5 @@
-Historical Updates ID
-=======================
+Historical Updates Hydro ID
+===========================
 BOUNDARYFLOW
 mtz                 /FILL+CHAN/RSAC054/STAGE//15MIN/DWR-DMS-201203_NAVD/    
 calaveras           /FILL+CHAN/RCAL009/FLOW//1DAY/DWR-DMS-201203/    
@@ -56,7 +56,21 @@ orhrb_weirop_fall        gates-v8-06212012.dss    /HIST+GATE/ORHRB_FALL/WEIR_OP/
 orhrb_weirop_spring      gates-v8-06212012.dss    /HIST+GATE/ORHRB/WEIR_OP//IR-DECADE/DWR-BDO/    
 
 
+Historical Updates Qual ID
+===========================
 
+NODE_CONCENTRATION
+EC for DICU*  dicuwq_3vals_extended.dss
+jones_out           events.dss                      /HIST+CHAN/JONES/EC//1DAY/DWR-DMS/                    
+jones_pumpout       events.dss                      /HIST+CHAN/JONES/EC//1DAY/DWR-DMS/                    
+mtz                 hist_19902012.dss               /FILL+CHAN/RSAC054/EC//1HOUR/DWR-DMS-201203_CORRECTED/    
+sac                 timeseries/hist_19902012.dss    /FILL+CHAN/RSAC139/EC//1DAY/DWR-DMS-201203/           
+vernalis            timeseries/hist_19902012.dss    /FILL+CHAN/RSAN112/EC//1DAY/DWR-DMS-201203/           
+yolo                timeseries/hist_19902012.dss    /FILL+CHAN/RSAC139/EC//1DAY/DWR-DMS-201203/           
+
+RESERVOIR_CONCENTRATION
+NAME  RES_NAME  VARIABLE  FILLIN  FILE  PATH  
+dicu_drain_bbid     dicuwq_3vals_extended.dss       /DICU-HIST+RSVR/BBID/DRAIN-EC//1MON/DWR-BDO/          
 
 =================
 

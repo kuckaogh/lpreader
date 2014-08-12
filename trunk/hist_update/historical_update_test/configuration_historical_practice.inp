@@ -9,11 +9,11 @@ HISTFLOWVERSION          DWR-DMS-${VERSIONDATE}
 HISTSTAGEVERSION         ${HISTFLOWVERSION}
 HISTQUALVERSION          DWR-DMS-${VERSIONDATE}
 #runtime                
-START_DATE               01JAN1999
+START_DATE               31MAR2012
 START_TIME               0000
-QUAL_START_DATE          02JAN1999
+QUAL_START_DATE          31MAR2012
 PTM_START_DATE           ${QUAL_START_DATE}
-END_DATE                 01APR2012
+END_DATE                 01MAY2012
 END_TIME                 0000
 TEMPDIR                  z:/temp                                #Spacious directory for scratch files             
 #Input envvars          

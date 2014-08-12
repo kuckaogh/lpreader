@@ -10,7 +10,7 @@ HISTSTAGEVERSION         ${HISTFLOWVERSION}
 HISTQUALVERSION          DWR-DMS-${VERSIONDATE}
 #runtime                
 START_DATE               31MAR2012
-START_TIME               0000
+START_TIME               2400
 QUAL_START_DATE          31MAR2012
 PTM_START_DATE           ${QUAL_START_DATE}
 END_DATE                 01MAY2012

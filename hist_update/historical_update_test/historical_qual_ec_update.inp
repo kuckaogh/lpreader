@@ -32,11 +32,9 @@ END
 
 IO_FILE
 MODEL      TYPE     IO    INTERVAL FILE                            
-qual       restart  in    1day     qual_ic_02mar.qrf
-#Initial condition a restart is required
-#${DSM2OUTPUTDIR}/FOR1_DB0_CU4_DXC0_May09.qrf   
+qual       restart  out              1mon     ${QUALRSTFILE}                   #Initial condition a restart is required
 qual       output   out              none     ${QUALOUTFILE}                   #Echoed run status                      
-qual       echo     out              none     ${DSM2OUTPUTDIR}/qual_ec_echo_${DSM2MODIFIER}.inp #Echoed input                             
+qual       echo     out              none     ${DSM2OUTPUTDIR}/qual_ec_echo_${DSM2MODIFIER}.inp #Echoed input                           
 END
                 
 TIDEFILE           
@@ -48,10 +46,8 @@ GROUPS
 ${DSM2INPUTDIR}/group_sourcetracking_20090715.inp
 END
 
-
 QUAL_TIME_SERIES
-./input/node_concentration_optimizer.inp
-#./input/node_concentration_delta_historical_qual_20121214.inp
+${DSM2INPUTDIR}/node_concentration_delta_historical_qual_20121214.inp
 ${DSM2INPUTDIR}/node_concentration_dicu_ec_20090715.inp
 ${DSM2INPUTDIR}/reservoir_concentration_dicu_ec_20090715.inp
 ${DSM2INPUTDIR}/node_concentration_jones_qual_20090715.inp
@@ -62,9 +58,5 @@ ${DSM2INPUTDIR}/output_channel_std_qual_rki_20090715.inp
 ${DSM2INPUTDIR}/output_channel_std_qual_named_20090715.inp
 ${DSM2INPUTDIR}/output_channel_std_qual_rki_addmore_20121214.inp
 ${DSM2INPUTDIR}/output_reservoir_std_qual_named_20090715.inp
-${DSM2INPUTDIR}/output_reservoir_source_track_ec_20090715.inp
-./input/output_channel_source_track_cdec_ec_20090806.inp
-./input/output_channel_qual_drought.inp
-./input/output_marsh_qual.inp
 END
 

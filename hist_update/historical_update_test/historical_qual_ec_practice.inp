@@ -32,7 +32,7 @@ END
 
 IO_FILE
 MODEL      TYPE     IO               INTERVAL FILE                            
-qual       restart  out              1mon     ${QUALRSTFILE}                   #Initial condition a restart is required
+qual       restart  in               1mon     historical_base_20120331.qrf
 qual       output   out              none     ${QUALOUTFILE}                   #Echoed run status                      
 qual       echo     out              none     ${DSM2OUTPUTDIR}/qual_ec_echo_${DSM2MODIFIER}.inp #Echoed input                           
 END

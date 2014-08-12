@@ -1,7 +1,7 @@
 
 ENVVAR
 NAME                     VALUE                                 
-DSM2MODIFIER             historical_v81               #Study name used for DSM2 output                  
+DSM2MODIFIER             historical_base               #Study name used for DSM2 output                  
 DSM2INPUTDIR             ../../common_input                                           
 DSM2AGENCY               dwr
 VERSIONDATE              201203                                                       
@@ -18,7 +18,7 @@ END_TIME                 0000
 TEMPDIR                  z:/temp                                #Spacious directory for scratch files             
 #Input envvars          
 STUDYDIR                 .
-TSINPUTDIR               ../../timeseries
+TSINPUTDIR               .
 BNDRYINPUT               ${TSINPUTDIR}/hist_19902012.dss       #hist_19902007.dss
 GATEFILE                 ${TSINPUTDIR}/gates-v8-06212012.dss  #gategates-201203.dss    #gates_db.dss
 DICUFILE                 ${TSINPUTDIR}/dicu_201203.dss

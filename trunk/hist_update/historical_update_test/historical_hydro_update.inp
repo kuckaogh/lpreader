@@ -38,10 +38,9 @@ END
 
 
 IO_FILE
-MODEL TYPE  IO  INTERVAL FILE                          
-hydro hdf5  out 15min ${HYDROTIDEFILE}
-#hydro restart out     1day ${DSM2OUTPUTDIR}/hydro_ic_apr1.hrf 
-#hydro restart in     1day ${DSM2OUTPUTDIR}/FOR1_DB0_CU4_DXC0_May09.hrf  #Initial condition a restart is required
+MODEL TYPE    IO  INTERVAL FILE                          
+hydro hdf5    out    30min ${HYDROTIDEFILE}               #Flow data to be passed to qual and ptm 
+hydro restart out     1mon ${HYDRORSTFILE}                #Initial condition a restart is required
 hydro output  out     none ${HYDROOUTFILE}                #Echoed run status                      
 hydro echo    out     none ${DSM2OUTPUTDIR}/hydro_echo_${DSM2MODIFIER}.inp #Echoed input                           
 END
@@ -83,10 +82,10 @@ ${DSM2INPUTDIR}/oprule_hist_temp_barriers_20110418_NAVD.inp
 END
 
 OUTPUT_TIME_SERIES
+
 ${DSM2INPUTDIR}/output_channel_std_hydro_rki_20090715.inp
 ${DSM2INPUTDIR}/output_channel_hydro_V81_calibration_20121214.inp
 ${DSM2INPUTDIR}/output_reservoir_std_hydro_named_20090715.inp
 ${DSM2INPUTDIR}/output_channel_std_hydro_boundary_20090715.inp
-./input/output_channel_hydro_check_2gates.inp
 END
 

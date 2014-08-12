@@ -24,8 +24,8 @@ END_TIME                 0000
 TEMPDIR                  z:/temp #Spacious directory for scratch files             
 #Input envvars          
 STUDYDIR                 .
-TSINPUTDIR               ./timeseries
-BNDRYINPUT       ${TSINPUTDIR}/hist19902014_droughtstudy.dss
+TSINPUTDIR               .
+BNDRYINPUT       ${TSINPUTDIR}/hist19902014_droughtstudy_20140601.dss
 GATEFILE         ${TSINPUTDIR}/gates-201403_droughtstudy.dss
 DICUFILE         ${TSINPUTDIR}/dicu_201412_${DCUNo}.dss
 QUALBNDINP       ${TSINPUTDIR}/hist19902014_droughtstudy.dss 

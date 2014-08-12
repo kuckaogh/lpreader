@@ -14,7 +14,7 @@
 # 9    ../../common_input/boundary_stage_delta_historical_20090715_navd.inp
 # 10   ../../common_input/source_flow_dicu_historical_20090715.inp
 # 11   ../../common_input/source_flow_jones_hydro_20090806.inp
-# 12   ../../common_input/oprule_historical_gate_20110418_navd.inp
+# 12   oprule_historical_gate_20110418_navd.inp
 # 13   ../../common_input/oprule_hist_temp_barriers_20110418_navd.inp
 # 14   ../../common_input/output_channel_std_hydro_rki_20090715.inp
 # 15   ../../common_input/output_channel_hydro_v81_calibration_20121214.inp

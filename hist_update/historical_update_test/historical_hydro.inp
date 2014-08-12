@@ -65,7 +65,7 @@ ${DSM2INPUTDIR}/source_flow_jones_hydro_20090806.inp
 END
 
 OPERATION
-${DSM2INPUTDIR}/oprule_historical_gate_20110418_NAVD.inp    
+oprule_historical_gate_20110418_NAVD.inp    
 ${DSM2INPUTDIR}/oprule_hist_temp_barriers_20110418_NAVD.inp
 END
 

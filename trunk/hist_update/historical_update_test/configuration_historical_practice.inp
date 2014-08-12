@@ -1,19 +1,19 @@
 
 ENVVAR
 NAME                     VALUE                                 
-DSM2MODIFIER             historical_practice               #Study name used for DSM2 output                  
+DSM2MODIFIER             historical_prac               #Study name used for DSM2 output                  
 DSM2INPUTDIR             ../../common_input                                           
 DSM2AGENCY               dwr
-VERSIONDATE              201203                                                       
-HISTFLOWVERSION          DWR-DMS-${VERSIONDATE}                                    
+VERSIONDATE              prac                                                       
+HISTFLOWVERSION          ${VERSIONDATE}                                    
 HISTSTAGEVERSION         ${HISTFLOWVERSION}
-HISTQUALVERSION          DWR-DMS-${VERSIONDATE}
+HISTQUALVERSION          ${VERSIONDATE}
 #runtime                
-START_DATE               31MAR2012
-START_TIME               2400
-QUAL_START_DATE          31MAR2012
+START_DATE               02JAN2014
+START_TIME               0000
+QUAL_START_DATE          05JAN2014
 PTM_START_DATE           ${QUAL_START_DATE}
-END_DATE                 01MAY2012
+END_DATE                 01MAY2014
 END_TIME                 0000
 TEMPDIR                  z:/temp                                #Spacious directory for scratch files             
 #Input envvars          

@@ -40,7 +40,7 @@ END
 IO_FILE
 MODEL TYPE    IO  INTERVAL FILE                          
 hydro hdf5    out    30min ${HYDROTIDEFILE}               #Flow data to be passed to qual and ptm 
-hydro restart in     1mon   historical_base_20120331.hrf
+hydro restart out     1mon ${HYDRORSTFILE}                #Initial condition a restart is required
 hydro output  out     none ${HYDROOUTFILE}                #Echoed run status                      
 hydro echo    out     none ${DSM2OUTPUTDIR}/hydro_echo_${DSM2MODIFIER}.inp #Echoed input                           
 END

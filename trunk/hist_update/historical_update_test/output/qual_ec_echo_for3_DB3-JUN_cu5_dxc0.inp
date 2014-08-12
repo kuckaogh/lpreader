@@ -5,7 +5,7 @@
 # Other files, increasing priority: 
 # 1    configuration_historical_update.inp
 # 2    ../../common_input/group_sourcetracking_20090715.inp
-# 3    ../../common_input/node_concentration_delta_historical_qual_20121214.inp
+# 3    node_concentration_delta_historical_qual_20121214_update.inp
 # 4    ../../common_input/node_concentration_dicu_ec_20090715.inp
 # 5    ../../common_input/reservoir_concentration_dicu_ec_20090715.inp
 # 6    ../../common_input/node_concentration_jones_qual_20090715.inp
@@ -32,7 +32,7 @@ DSM2INPUTDIR                        ../../common_input
 DSM2MODIFIER                        for3_DB3-JUN_cu5_dxc0    
 DSM2OUTPUTDIR                       ./output    
 DXCNo                               dxc0    
-END_DATE                            01NOV2014    
+END_DATE                            01JUL2014    
 END_TIME                            0000    
 EVENTSINPUT                         ./events.dss    
 FINE_OUT                            15MIN    
@@ -51,15 +51,15 @@ HYDROTIDEFILE                       z:/for3_DB3-JUN_cu5_dxc0.h5
 OUTPUTFILE                          for3_DB3-JUN_cu5_dxc0.dss    
 PTMOUTFILE                          ./output/for3_DB3-JUN_cu5_dxc0.pof    
 PTMOUTPUTFILE                       ./output/ptmout.dss    
-PTM_START_DATE                      02MAR2014    
+PTM_START_DATE                      02APR2014    
 QUALBNDINP                          ./hist19902014_droughtstudy_20140601.dss    
 QUALOUTDSSFILE                      ./output/for3_DB3-JUN_cu5_dxc0.dss    
 QUALOUTFILE                         ./output/for3_DB3-JUN_cu5_dxc0.qof    
 QUALRSTFILE                         ./output/for3_DB3-JUN_cu5_dxc0.qrf    
 QUALTIDEFILE                        ./output/for3_DB3-JUN_cu5_dxc0_ec.h5    
-QUAL_START_DATE                     02MAR2014    
+QUAL_START_DATE                     02APR2014    
 RunNo                               DB3-JUN    
-START_DATE                          28FEB2014    
+START_DATE                          28MAR2014    
 START_TIME                          0000    
 STOCKTON_EFF_FLOW                   0.0    
 STOCKTON_FLOW_FILE                  constant    
@@ -84,9 +84,9 @@ flush_output                        20day
 init_conc                           0.0    
 printlevel                          1    
 qual_time_step                      15min    
-run_end_date                        01NOV2014    
+run_end_date                        01JUL2014    
 run_end_time                        0000    
-run_start_date                      02MAR2014    
+run_start_date                      02APR2014    
 run_start_time                      0000    
 temp_dir                            z:/temp    
 warn_missing                        false    
@@ -372,7 +372,7 @@ jones_out           118      ec                  last            ./events.dss   
 jones_pumpout       121      doc                 last            ./events.dss    /HIST+CHAN/JONES/DOC//1DAY/DWR-DMS/                   
 jones_pumpout       121      ec                  last            ./events.dss    /HIST+CHAN/JONES/EC//1DAY/DWR-DMS/                    
 moke                447      ec                  last            constant    125                                                   
-mtz                 361      ec                  last            ./hist19902014_droughtstudy_20140601.dss    /FILL+CHAN/RSAC054/EC//1HOUR/DWR-DMS-201403_FORECAST_for3_CORRECTED/    
+mtz                 361      ec                  last            ./hist19902014_droughtstudy_20140601.dss    /FILL+CHAN/RSAC054/EC//1HOUR/DWR-DMS-201402_FORECAST/    
 sac                 330      ec                  last            ./hist19902014_droughtstudy_20140601.dss    /FILL+CHAN/RSAC139/EC//1DAY/DWR-DMS-201403_FORECAST_for3/    
 vernalis            17       ec                  last            ./hist19902014_droughtstudy_20140601.dss    /FILL+CHAN/RSAN112/EC//1DAY/DWR-DMS-201403_FORECAST_for3/    
 yolo                317      ec                  last            ./hist19902014_droughtstudy_20140601.dss    /FILL+CHAN/RSAC139/EC//1DAY/DWR-DMS-201403_FORECAST_for3/    

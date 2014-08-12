@@ -28,7 +28,7 @@ TSINPUTDIR               .
 BNDRYINPUT       ${TSINPUTDIR}/hist19902014_droughtstudy_20140601.dss
 GATEFILE         ${TSINPUTDIR}/gates-201403_droughtstudy.dss
 DICUFILE         ${TSINPUTDIR}/dicu_201412_${DCUNo}.dss
-QUALBNDINP       ${TSINPUTDIR}/hist19902014_droughtstudy.dss 
+QUALBNDINP       ${TSINPUTDIR}/hist19902014_droughtstudy_20140601.dss
 DICUFILE_ECS     ${TSINPUTDIR}/dicuwq_3vals.dss   #dicuwq_200611.dss        #seasonal DICU file for EC                        
 DICUFILE_ECE             ${TSINPUTDIR}/dicuwq_3vals_extended.dss   #dicuwq_200611_expand.dss #expanded DICU file for EC                        
 DICUFILE-ECS             ${TSINPUTDIR}/dicu.dss                 #seasonal DICU file for EC                        

@@ -3,12 +3,19 @@ package viz;
 import com.jme3.app.SimpleApplication;
 import com.jme3.material.Material;
 import com.jme3.math.Vector3f;
+import com.jme3.renderer.queue.RenderQueue.Bucket;
 import com.jme3.scene.Geometry;
 import com.jme3.scene.Mesh;
 import com.jme3.scene.Spatial;
+import com.jme3.scene.Spatial.CullHint;
 import com.jme3.scene.VertexBuffer.Type;
 import com.jme3.scene.shape.Box;
+import com.jme3.scene.shape.Quad;
 import com.jme3.system.AppSettings;
+import com.jme3.texture.Image;
+import com.jme3.texture.Texture;
+import com.jme3.texture.Texture2D;
+import com.jme3.texture.plugins.AWTLoader;
 import com.jme3.util.BufferUtils;
 import com.jme3.input.KeyInput;
 import com.jme3.input.controls.ActionListener;
@@ -48,6 +55,7 @@ public class MainViz extends SimpleApplication {
     @Override
     public void simpleInitApp() {
       
+    	flyCam.setEnabled(false);
         work();
         
     }
@@ -82,6 +90,33 @@ public class MainViz extends SimpleApplication {
         m.setBuffer(Type.Index, 3, BufferUtils.createIntBuffer(la.drawIndex));
         m.updateBound();
 
+        
+        
+        
+        //Make the Background
+        Material backgroundMat = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
+        Texture backgroundTex = assetManager.loadTexture("Interface/Logo/Monkey.jpg");
+        backgroundMat.setTexture("ColorMap", backgroundTex);
+        float w = this.getContext().getSettings().getWidth();
+        float h = this.getContext().getSettings().getHeight();
+        float ratio = w/h;
+         
+        cam.setLocation(Vector3f.ZERO.add(new Vector3f(0.0f, 0.0f,100f)));//Move the Camera back
+        float camZ = cam.getLocation().getZ()-15; //No Idea why I need to subtract 15
+        float width = camZ*ratio;
+        float height = camZ;
+         
+        Quad fsq = new Quad(width, height);
+        Geometry backgroundGeom = new Geometry("Background", fsq);
+        backgroundGeom.setQueueBucket(Bucket.Sky);
+        backgroundGeom.setCullHint(CullHint.Never);
+        backgroundGeom.setMaterial(backgroundMat);
+        backgroundGeom.setLocalTranslation(-(width / 2), -(height/ 2), 0);  //Need to Divide by two because the quad origin is bottom left
+        rootNode.attachChild(backgroundGeom);
+        
+        
+        
+        
         coloredMesh = new Geometry ("ColoredMesh", m);
         
         Material matVC = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
@@ -110,6 +145,8 @@ public class MainViz extends SimpleApplication {
         wall.setLocalTranslation(2.0f,-2.5f,0.0f);
         rootNode.attachChild(wall);
         
+               
+        
         Geometry wfGeom = new Geometry("wireframeGeometry", m);
         Material matWireframe = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
         matWireframe.setColor("Color", ColorRGBA.Green);
@@ -119,6 +156,13 @@ public class MainViz extends SimpleApplication {
         rootNode.attachChild(wfGeom);
         
         //matVC.getAdditionalRenderState().setWireframe(true);
+       
+        
+        
+
+        
+        
+        
         
         initKeys();      
         

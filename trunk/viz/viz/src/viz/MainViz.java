@@ -5,7 +5,9 @@ import com.jme3.material.Material;
 import com.jme3.math.Vector3f;
 import com.jme3.scene.Geometry;
 import com.jme3.scene.Mesh;
+import com.jme3.scene.Spatial;
 import com.jme3.scene.VertexBuffer.Type;
+import com.jme3.scene.shape.Box;
 import com.jme3.system.AppSettings;
 import com.jme3.util.BufferUtils;
 import com.jme3.input.KeyInput;
@@ -13,6 +15,7 @@ import com.jme3.input.controls.ActionListener;
 import com.jme3.input.controls.AnalogListener;
 import com.jme3.input.controls.KeyTrigger;
 import com.jme3.math.ColorRGBA;
+
 import viz.components.Layout;
 import viz.examples.*;
 
@@ -95,6 +98,17 @@ public class MainViz extends SimpleApplication {
         rootNode.attachChild(coloredMesh);
         
         
+        
+     // Create a wall with a simple texture from test_data
+        Box box = new Box(2.5f,2.5f,1.0f);
+        Spatial wall = new Geometry("Box", box );
+        Material mat_brick = new Material( 
+            assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
+        //mat_brick.setTexture("ColorMap", assetManager.loadTexture("Textures/Terrain/BrickWall/BrickWall.jpg"));
+        mat_brick.setTexture("ColorMap", assetManager.loadTexture("Textures/caustics.jpg"));
+        wall.setMaterial(mat_brick);
+        wall.setLocalTranslation(2.0f,-2.5f,0.0f);
+        rootNode.attachChild(wall);
         
         Geometry wfGeom = new Geometry("wireframeGeometry", m);
         Material matWireframe = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");

@@ -1,6 +1,7 @@
 package viz;
 
 import com.jme3.app.SimpleApplication;
+import com.jme3.asset.TextureKey;
 import com.jme3.material.Material;
 import com.jme3.math.Vector3f;
 import com.jme3.renderer.queue.RenderQueue.Bucket;
@@ -10,6 +11,7 @@ import com.jme3.scene.Spatial;
 import com.jme3.scene.Spatial.CullHint;
 import com.jme3.scene.VertexBuffer.Type;
 import com.jme3.scene.shape.Box;
+import com.jme3.scene.shape.Cylinder;
 import com.jme3.scene.shape.Quad;
 import com.jme3.system.AppSettings;
 import com.jme3.texture.Image;
@@ -39,23 +41,10 @@ public class MainViz extends SimpleApplication {
     Mesh m = new Mesh();
     Geometry coloredMesh;
     Boolean isRunning=true;
-    
-
-    public static void main(String[] args){
-       // AppSettings settings = new AppSettings(true);
-        settings.setResolution(640, 480);
-        settings.setTitle("Test");
-        settings.setFrameRate(60);
-        MainViz app = new MainViz();
-        app.setSettings(settings);
-        app.setShowSettings(false);
-        app.start();
-    }
 
     @Override
     public void simpleInitApp() {
       
-    	flyCam.setEnabled(false);
         work();
         
     }
@@ -69,7 +58,8 @@ public class MainViz extends SimpleApplication {
 //    }
     
     public void work(){
-        
+    	
+    	flyCam.setEnabled(false);
 
         //Layout la = new Ex1().create();
         Layout la = new Ex2().create();
@@ -95,13 +85,14 @@ public class MainViz extends SimpleApplication {
         
         //Make the Background
         Material backgroundMat = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
-        Texture backgroundTex = assetManager.loadTexture("Interface/Logo/Monkey.jpg");
+        //Texture backgroundTex = assetManager.loadTexture("Interface/Logo/Monkey.jpg");
+        Texture backgroundTex = assetManager.loadTexture("Textures/delta_test.jpg");
         backgroundMat.setTexture("ColorMap", backgroundTex);
         float w = this.getContext().getSettings().getWidth();
         float h = this.getContext().getSettings().getHeight();
-        float ratio = w/h;
+        float ratio = 1.0f; //w/h;
          
-        cam.setLocation(Vector3f.ZERO.add(new Vector3f(0.0f, 0.0f,100f)));//Move the Camera back
+        cam.setLocation(Vector3f.ZERO.add(new Vector3f(0.0f, 0.0f,60f)));//Move the Camera back
         float camZ = cam.getLocation().getZ()-15; //No Idea why I need to subtract 15
         float width = camZ*ratio;
         float height = camZ;
@@ -131,6 +122,20 @@ public class MainViz extends SimpleApplication {
         // move mesh a bit so that it doesn't intersect with the first one
         //coloredMesh.setLocalTranslation(4, 0, 0);
         rootNode.attachChild(coloredMesh);
+        
+        
+        // cylinder
+        Cylinder cyl = new Cylinder(20, 50, 2, 2, true);
+        Geometry geom_cyl = new Geometry("Cylinder", cyl);
+        Material mat_cyl = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
+        mat_cyl.setColor("Color", new ColorRGBA(0.2f, 0.6f, 0.1f, 1f));
+        //TextureKey key = new TextureKey("Interface/Logo/Monkey.jpg", true);
+        //key.setGenerateMips(true);
+        //Texture tex = assetManager.loadTexture(key);
+        //tex.setMinFilter(Texture.MinFilter.Trilinear);
+        //mat.setTexture("ColorMap", tex);
+        geom_cyl.setMaterial(mat_cyl);      
+        rootNode.attachChild(geom_cyl);
         
         
         
@@ -212,5 +217,18 @@ public class MainViz extends SimpleApplication {
         System.out.println("Press P to unpause.");
       }
     }
+    
+    
   };
+  
+  public static void main(String[] args){
+      // AppSettings settings = new AppSettings(true);
+       settings.setResolution(640, 480);
+       settings.setTitle("Test");
+       settings.setFrameRate(60);
+       MainViz app = new MainViz();
+       app.setSettings(settings);
+       app.setShowSettings(false);
+       app.start();
+   }
 }
